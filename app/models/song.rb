@@ -30,19 +30,6 @@ class Song < ActiveRecord::Base
     end
   end
 
-  # This implementation is a little more advanced,
-  # but allows notes to have separate ids to avoid
-  # issues in a more realistic scenario if a song and
-  # its notes were deleted
-
-  #def note_contents=(contents)
-  #  contents.delete_if(&:blank?).each { |content|
-  #    if !Note.find_by(content: content, song_id: self.id)
-  #    self.notes.build(content: content)
-  #  end
-  #  }
-  #end
-
   def note_contents
     self.notes.map { |note| note.content }
   end
