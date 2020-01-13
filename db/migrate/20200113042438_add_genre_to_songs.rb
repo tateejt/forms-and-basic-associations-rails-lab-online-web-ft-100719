@@ -3,5 +3,3 @@ class AddGenreToSongs < ActiveRecord::Migration[5.0]
     add_reference :songs, :genre, index: true, foreign_key: true
   end
 end
-  end
-end
